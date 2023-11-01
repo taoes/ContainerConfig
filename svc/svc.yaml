@@ -8,6 +8,8 @@ spec:
     app: myapp
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 80
+    # service端口
+    port: 8080      
+    # pod 端口 
+    targetPort: 80  
     
