@@ -10,6 +10,6 @@ spec:
     image: busybox
     command: ['sh','-c','until nslookup nginxservice; do echo waiting for nginxsservice; sleep 2; done']
   containers:
-  - name: myapp-nginx
+  - name: myapp-init-nginx
     image: nginx
 
