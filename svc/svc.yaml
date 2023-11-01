@@ -8,6 +8,6 @@ spec:
     app: myapp
   ports:
   - protocol: TCP
-    port: 32379
+    port: 8080
     targetPort: 80
     
