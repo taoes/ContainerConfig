@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: nginxservice
 spec:
+  type: NodePort
   selector:
     app: myapp
   ports:
   - protocol: TCP
     port: 80
     targetPort: 6379
-    type: NodePort
+    
