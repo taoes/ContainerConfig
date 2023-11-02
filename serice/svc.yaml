@@ -8,6 +8,7 @@ spec:
     app: myapp
   ports:
   - protocol: TCP
+    type: NodePort
     # service端口
     port: 8081      
     # pod 端口 
