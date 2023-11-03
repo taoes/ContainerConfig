@@ -1,11 +1,15 @@
+# 创建 Service
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service-2
 spec:
+  # Serivce的类型，默认是 ClusteroIP，使用NodePort可以通过节点Node的IP访问服务
   type: NodePort
+  # 下游的Pod选择
   selector:
     app: myapp
+  # 对外暴露的端口
   ports:
   - protocol: TCP
     type: NodePort

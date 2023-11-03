@@ -1,12 +1,16 @@
+# 创建 Deployment 部署，可以自动控制实例的副本数量
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
+  # 通过 selector判断副本数是否符合要求，因此 matchLabels 需要和 副本的labels匹配
   selector:
     matchLabels:
       app: nginx-deploy
+  # 指定要求的副本数量
   replicas: 5
+  # 副本的模板配置
   template:
     metadata:
       labels:

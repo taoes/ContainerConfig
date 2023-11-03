@@ -1,3 +1,4 @@
+# 创建带有 init contianer的Pod
 apiVersion: v1
 kind: Pod
 metadata:
@@ -5,10 +6,12 @@ metadata:
   labels:
     app: myinitapp
 spec:
+  # 配置 init 容器 ，如果有多个将按照顺序执行
   initContainers:
   - name: init-myservice
     image: busybox
     command: ['sh','-c','until nslookup nginxservice; do echo waiting for nginxsservice; sleep 2; done']
+  # 主容器
   containers:
   - name: myapp-init-nginx
     image: nginx
